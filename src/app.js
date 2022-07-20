@@ -15,7 +15,7 @@ const app = async (yargsObj) => {
     const result = yargsObj.title
       ? await collection.find({ title: yargsObj.title }).toArray()
       : await collection.find({ actor: yargsObj.actor }).toArray();
-    if (result == "") {
+    if (result.length === 0 ) {
       console.log("Not found");
     } else {
       console.log(result);
